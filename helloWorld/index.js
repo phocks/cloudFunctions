@@ -1,6 +1,17 @@
+var fetch = require('node-fetch');
+
 function handleGET(req, res) {
   // Do something with the GET request
   var input = req.query.input;
+
+  var url = "http://google.com/"
+
+  fetch('https://icanhazdadjoke.com/')
+    .then(function(res) {
+        return res.json();
+    }).then(function(json) {
+        console.log(json);
+    });
 
   var randomNumber = Math.floor((Math.random() * input) + 1);
   res.status(200).json({
