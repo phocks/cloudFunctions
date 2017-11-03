@@ -1,10 +1,16 @@
 var fetch = require('node-fetch');
+var axios = require("axios");
 
 function handleGET(req, res) {
   // Do something with the GET request
   var input = req.query.input;
 
-  var url = "http://google.com/"
+  var url = "http://google.com/";
+  
+  axios.get("https://icanhazdadjoke.com/")
+    .then(function(res) {
+    console.log(res);
+  });
 
   fetch('https://icanhazdadjoke.com/')
     .then(function(res) {
